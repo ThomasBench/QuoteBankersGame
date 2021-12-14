@@ -31,8 +31,9 @@ const Env = () => {
         direction="column"
         justifyContent="space-around"
         alignItems="center">
-            <Grid item>
-                <h1>Oh collègue</h1>
+            <Grid item >
+                <h1>Who has a voice in the media?</h1>
+                <h3>An EPFL student project for the best course ever</h3>
             </Grid>
             <Grid item>
                 <Paper elevation = {3} style = {{height: 500,width: 800, margin: 'auto', padding : 30,display : 'block', verticalAlign : 'middle'}}>

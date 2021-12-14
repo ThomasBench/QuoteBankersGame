@@ -6,9 +6,9 @@ import {stepContext} from './Env'
 import Slider from '@mui/material/Slider'
 import { Card, CardContent, CardHeader, Typography } from '@mui/material'
 
-const jobs = ['Politician', 'Football player', 'Actor', 'Lawyer', 'Genius']
-const subjects  = ["Politics", 'Sports', 'Culture', 'World News', 'Rap music']
-const emotions = ['happiness', 'sadness', 'fear', 'anger']
+const jobs = ['Politician', 'Athlete', 'Actor', 'Lawyer', 'Researcher', 'Journalist', 'Musician', 'Businessperson']
+const subjects  = [""]
+const emotions = ['Happy', 'Sad', 'Fear', 'Anger', "Neutral"]
 function sendData(p){
     // let url = new URL('http://127.0.0.1:5000/predict/')
     // const params = p
@@ -61,7 +61,7 @@ const Age = () => {
                     <CardHeader title = {'Choose your age ! '}/>
                     <CardContent>
                         <Typography>You are {age} years old</Typography>
-                        <Slider  defaultValue = {20} step = {1} min  = {13} max = {130}  valueLabelDisplay="on" onChange={(val) => handleSliderChange(val)}/>
+                        <Slider  defaultValue = {20} step = {1} min  = {15} max = {80}  valueLabelDisplay="on" onChange={(val) => handleSliderChange(val)}/>
                         <Button variant="contained" onClick = {() => context.dispatcher({type: 'age', data: age })}>Validate</Button>
                     </CardContent>
                 </Card>
