@@ -10,7 +10,7 @@ const jobs = ['politician', 'athlete', 'actor', 'lawyer', 'researcher', 'journal
 const subjects  = [ "art", "sport", "economy & finance", "politics", "health & science"]
 const emotions = ['happy', 'sad', 'fear', 'anger', "neutral"]
 function handle_promise(dispatcher, p){
-    let url = new URL('https://quotebankers.pythonanywhere.com/predict/')
+    let url = new URL('https://calm-scrubland-87302.herokuapp.com/predict/')
     const params = p
     console.log(params)
     url.search = new URLSearchParams(params).toString();
