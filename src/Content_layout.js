@@ -12,9 +12,7 @@ const emotions = ['happy', 'sad', 'fear', 'anger', "neutral"]
 function handle_promise(dispatcher, p){
     let url = new URL('https://calm-scrubland-87302.herokuapp.com/predict/')
     const params = p
-    console.log(params)
     url.search = new URLSearchParams(params).toString();
-    console.log(url)
     fetch(url)
         .then(response => response.json())
         .then(data =>  dispatcher({type: "validation", data: data.score}))

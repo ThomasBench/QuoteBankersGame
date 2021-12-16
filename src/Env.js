@@ -28,7 +28,6 @@ const initialState = {index: -1, carac : {age: 0, gender : '', job: '', subject 
 const stepContext = React.createContext()
 const Env = () => {
     const [state,dispatcher] = useReducer(handleSteps, initialState)
-    console.log(state.index)
     return (
         <Grid container
         direction="column"
