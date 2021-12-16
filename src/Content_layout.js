@@ -6,17 +6,18 @@ import {stepContext} from './Env'
 import Slider from '@mui/material/Slider'
 import { Card, CardContent, CardHeader, Typography } from '@mui/material'
 
-const jobs = ['Politician', 'Athlete', 'Actor', 'Lawyer', 'Researcher', 'Journalist', 'Musician', 'Businessperson']
-const subjects  = [""]
-const emotions = ['Happy', 'Sad', 'Fear', 'Anger', "Neutral"]
-function sendData(p){
-    // let url = new URL('http://127.0.0.1:5000/predict/')
-    // const params = p
-    // url.search = new URLSearchParams(params).toString();
-    // fetch(url)
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    window.location.href='https://quotebankers.github.io/'
+const jobs = ['politician', 'athlete', 'actor', 'lawyer', 'researcher', 'journalist', 'musician', 'businessperson']
+const subjects  = [ "art", "sport", "economy & finance", "politics", "health & science"]
+const emotions = ['happy', 'sad', 'fear', 'anger', "neutral"]
+function handle_promise(dispatcher, p){
+    let url = new URL('https://quotebankers.pythonanywhere.com/predict/')
+    const params = p
+    console.log(params)
+    url.search = new URLSearchParams(params).toString();
+    console.log(url)
+    fetch(url)
+        .then(response => response.json())
+        .then(data =>  dispatcher({type: "validation", data: data.score}))
 }
 const Job = () => {
     const context = useContext(stepContext)
@@ -34,17 +35,20 @@ const Job = () => {
 const Gender = () => {
     const context = useContext(stepContext)
     return (
+        <>
+        <Typography> Choose your gender: </Typography>
         <Grid container spacing  = {2}>
             <Grid item>
-                <Button variant="contained" onClick = {() => context.dispatcher({type: 'gender', data: 'M' })}>Male</Button>
+                <Button variant="contained" onClick = {() => context.dispatcher({type: 'gender', data: 'male' })}>Male</Button>
             </Grid>
             <Grid item>
-                <Button variant="contained" onClick = {() => context.dispatcher({type: 'gender', data: 'F' })}>Female</Button>
+                <Button variant="contained" onClick = {() => context.dispatcher({type: 'gender', data: 'female' })}>Female</Button>
             </Grid>
-
-
-
+            <Grid item>
+                <Button variant="contained" onClick = {() => context.dispatcher({type: 'gender', data: 'other' })}>Other</Button>
+            </Grid>
         </Grid>
+        </>
     )
 }
 
@@ -105,7 +109,7 @@ const Validation = () => {
         <Typography>
             Is that who you are ? 
         </Typography>
-        <Button variant="contained" onClick = {() => sendData(person)} >Validate ! </Button>
+        <Button variant="contained" onClick = {() => handle_promise(context.dispatcher, person)} >Validate ! </Button>
         </>
     )
 }
