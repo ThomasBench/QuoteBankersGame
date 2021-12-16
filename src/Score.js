@@ -60,6 +60,7 @@ const colors = {
     3: "#FFE733",
     4: "#006B3E"
 }
+const site_url = "https://quotebankers.github.io/"
 const Score = (score) => {
     const button_style = {
         'textTransform': 'none',
@@ -75,7 +76,7 @@ const Score = (score) => {
             <Grid item xs = {2}><Rectangle score = {score} color = {colors[score]}></Rectangle> </Grid>
             <Grid item xs = {10}>{text_dicts[score]}</Grid>
         </Grid>
-        <Button variant = "contained" size = "large" style = {button_style}>Learn More : </Button>
+        <Button variant = "contained" size = "large" style = {button_style} onClick ={() => window.open(site_url)}>Learn More : </Button>
         </>
     )
     
