@@ -3,6 +3,7 @@ import { useReducer } from 'react'
 import Paper from '@mui/material/Paper'
 import { Grid } from '@mui/material'
 import Content from './Content'
+import SoundButton from './SoundButton'
 function handleSteps(state, action) {
     let newState = JSON.parse(JSON.stringify(state))
     switch(action.type){
@@ -41,10 +42,12 @@ const Env = () => {
                 <h1>Who has a voice in the media?</h1>
                 <h3>An EPFL student project to understand voice coverage</h3>
             </Grid>
+            <SoundButton/>
             <Grid item>
                 <Paper elevation = {3} style = {{height: "650px",width: "800px",padding : 15, verticalAlign : 'center'}}>
                     <stepContext.Provider value = {{state, dispatcher}}><Content/></stepContext.Provider>
                 </Paper>
+
             </Grid>
         </Grid>
     )
