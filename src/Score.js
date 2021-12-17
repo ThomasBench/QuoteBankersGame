@@ -23,7 +23,7 @@ const text_dicts = {
             you will likely be quoted between 10 and 100 times.
         </Typography>
         <Typography variant = "body1">
-            Not too bad, but some people are louder than you could by beeing who you are, and what you talk about...
+            Not too bad, but some people are louder than you could be by beeing who you are, and what you talk about...
             <br/>Want to know why ? Click on the Learn More button ! 
         </Typography>
         </>
