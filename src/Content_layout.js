@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, Typography, CircularProgress } from '@mu
 
 const jobs = ['politician', 'athlete', 'actor', 'lawyer', 'researcher', 'journalist', 'musician', 'businessperson']
 const subjects  = [ "art", "sport", "economy & finance", "politics", "health & science"]
-const emotions = ['happy', 'sad', 'fear', 'anger', "neutral"]
+const emotions = ['joy', 'sad', 'fear', 'anger', "neutral", "calm"]
 const loading_spinner = (<CircularProgress size = {50}></CircularProgress>)
 
 function handle_promise(dispatcher, p){
