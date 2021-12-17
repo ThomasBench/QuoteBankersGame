@@ -40,7 +40,7 @@ const Env = () => {
         alignItems="center">
             <Grid item >
                 <h1>Who has a voice in the media?</h1>
-                <h3>An EPFL student project to understand voice coverage</h3>
+                <h3>An EPFL student project to understand media coverage using the QuoteBank dataset</h3>
             </Grid>
             <SoundButton/>
             <Grid item>
