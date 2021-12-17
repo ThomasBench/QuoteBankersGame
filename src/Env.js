@@ -9,12 +9,16 @@ function handleSteps(state, action) {
         case 'prev':
             newState.index = state.index -1;
             break;
+        case 'sendVal':
+            newState.isLoading = true;
+            break;
         case 'slidClick':
             newState.index= action.data
             break;
         case 'validation':
             newState.score = action.data
             newState.index = state.index +1;
+            newState.isLoading = false;
             break;
         default:
             newState.index = state.index +1;
@@ -24,7 +28,7 @@ function handleSteps(state, action) {
     return newState
 }
 
-const initialState = {index: -1, carac : {age: 0, gender : '', job: '', subject : '', emotion: ''}, score : 0 }
+const initialState = {index: -1, carac : {age: 0, gender : '', job: '', subject : '', emotion: ''}, score : 0, isLoading : false }
 const stepContext = React.createContext()
 const Env = () => {
     const [state,dispatcher] = useReducer(handleSteps, initialState)
@@ -38,7 +42,7 @@ const Env = () => {
                 <h3>An EPFL student project for the best course ever</h3>
             </Grid>
             <Grid item>
-                <Paper elevation = {3} style = {{height: "60vh",width: "80vw", margin: 'auto', padding : 15,display : 'block', verticalAlign : 'middle'}}>
+                <Paper elevation = {3} style = {{height: "650px",width: "800px",padding : 15, verticalAlign : 'center'}}>
                     <stepContext.Provider value = {{state, dispatcher}}><Content/></stepContext.Provider>
                 </Paper>
             </Grid>

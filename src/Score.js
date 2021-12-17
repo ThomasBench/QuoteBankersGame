@@ -23,7 +23,7 @@ const text_dicts = {
             you will likely be quoted between 10 and 100 times.
         </Typography>
         <Typography variant = "body1">
-            Not too bad, but some people are more vocal than you could by beeing who you are, and what you talk about...
+            Not too bad, but some people are louder than you could by beeing who you are, and what you talk about...
             <br/>Want to know why ? Click on the Learn More button ! 
         </Typography>
         </>
@@ -66,18 +66,23 @@ const Score = (score) => {
         'textTransform': 'none',
         'backgroundColor': colors[score],
         "margin": "auto",
-        "fontSize": '20px'
+        "fontSize": '22px',
+        "borderRadius" : '5px',
+        "position": 'absolute',
+        "right": "14px"
+
 
 
     }
+
     return (
-        <>
+        <div style = {{position:'relative'}}>
         <Grid container direction = "row" spacing = {2}   alignItems="center" >
             <Grid item xs = {2}><Rectangle score = {score} color = {colors[score]}></Rectangle> </Grid>
             <Grid item xs = {10}>{text_dicts[score]}</Grid>
         </Grid>
-        <Button variant = "contained" size = "large" style = {button_style} onClick ={() => window.open(site_url)}>Learn More : </Button>
-        </>
+        <Button variant = "contained" size = "large" style = {button_style} onClick ={() => window.open(site_url)}>Learn More ! </Button>
+        </div>
     )
     
 }

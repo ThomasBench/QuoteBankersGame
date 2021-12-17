@@ -15,30 +15,34 @@ const Content = () => {
     const score_content = Score(context.state.score)
     const welcome_content = Welcome()
     const index = context.state.index 
+    const line_jumps = (<><br/><br/><br/><br/></>   )
     const prev_button = (<Grid item ><Button variant="contained" onClick = {() => context.dispatcher({data : context.state, type : 'prev'})}> previous</Button></Grid>)
     let usual_content =  (
-    <Grid container 
+    <Grid container item 
         spacing = {2}   
         direction="row"
-        justifyContent="space-between"
+        justifyContent="space_between"
         alignItems="center"
         >
     <Grid item xs = {3}> <Suite/></Grid>       
-    <Grid item xs = {4}>{content_layouts[context.state.index]}</Grid>
+    <Grid item xs = {5}>{content_layouts[context.state.index]}</Grid>
     <Grid item xs = {4} ><Recap person = {context.state.carac}/></Grid>
    </Grid>
    )
 
     return (
-        <>
-        {index > 0 && prev_button}
-       <Grid container direction = "row" alignItems = "center" style = {{"margin" : 'auto'}}   justifyContent="center">
-        <Grid item>{index<0 && welcome_content}</Grid>
-        <Grid item>{(index<6 && index>=0) && usual_content}</Grid>
-       <Grid item>{index === 6 && score_content}</Grid>
+        <Grid container direction = "column" justifyContent= "space-between">
+            <Grid item xs = {4}>{index > 0 && prev_button}</Grid>
+            {(index>=0) && line_jumps}
+            <Grid container item direction = "row" alignItems = "center" justifyContent="center" xs ={8}>
+                <Grid item>{index<0 && welcome_content}</Grid>
+
+                <Grid item>{(index<6 && index>=0) && usual_content}</Grid>
+                <Grid item>{index === 6 && score_content}</Grid>
+            </Grid>
        </Grid>
-       </>
     )
 }
 
 export default Content
+
