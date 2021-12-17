@@ -5,7 +5,7 @@ import {stepContext} from './Env'
 import img from './welcome_img.png'
 const Welcome = () => {
     const context = useContext(stepContext)
-    const git_url = "https://github.com/epfl-ada/ada-2021-project-quotebankers"
+    const git_url = "https://linktr.ee/QuoteBankers"
     const style = {
         transformText: 'none',
         fontSize : '30px',

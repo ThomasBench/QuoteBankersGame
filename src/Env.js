@@ -39,7 +39,7 @@ const Env = () => {
         alignItems="center">
             <Grid item >
                 <h1>Who has a voice in the media?</h1>
-                <h3>An EPFL student project for the best course ever</h3>
+                <h3>An EPFL student project to understand voice coverage</h3>
             </Grid>
             <Grid item>
                 <Paper elevation = {3} style = {{height: "650px",width: "800px",padding : 15, verticalAlign : 'center'}}>
