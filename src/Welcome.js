@@ -13,7 +13,7 @@ const Welcome = () => {
     }
     return (
         <Grid container direction = 'column' justifyContent = "space-around" >
-            <Grid item ><img src={img} alt = "welcome image" style = {{height: "400px", width:'650px', borderRadius : '15px'}}/></Grid>
+            <Grid item ><img src={img} alt = "welcome" style = {{height: "400px", width:'650px', borderRadius : '15px'}}/></Grid>
             <br/>
             <Grid item >
                 <Typography align = "center">
