@@ -12,7 +12,7 @@ const emotions = ['joy', 'sad', 'fear', 'anger', "neutral", "calm"]
 const loading_spinner = (<CircularProgress size = {50}></CircularProgress>)
 
 function handle_promise(dispatcher, p){
-    let url = new URL('https://calm-scrubland-87302.herokuapp.com/predict/')
+    let url = new URL('https://quote-api-cjwn.onrender.com/predict/')
     const params = p
     dispatcher({type : 'sendVal', data : true})
     url.search = new URLSearchParams(params).toString();
